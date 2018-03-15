@@ -1,7 +1,6 @@
 /dist/assets
 /dist/upload
 /dist/php
-/dist/.htaccess
 /dist/client.js
 /dist/favicon.ico
 /node_modules/
