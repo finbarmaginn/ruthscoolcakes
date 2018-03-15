@@ -27,7 +27,7 @@ class Home extends React.Component {
             }}>
               Welcome{" "}
             </span>
-            to the wonderful and whacky world of<br/>
+            to the wonderful and whacky world of...<br/>
           </p>
           <h3 className="miniLogo"><img src={require('../../imgs/logo.png')} style={{
             display: "inline-block",
