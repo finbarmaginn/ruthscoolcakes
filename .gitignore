@@ -2,7 +2,6 @@
 /dist/upload
 /dist/php
 /dist/client.js
-/dist/favicon.ico
 /node_modules/
 /src/imgs/*.png
 /src/imgs/gallery/*.jpg
