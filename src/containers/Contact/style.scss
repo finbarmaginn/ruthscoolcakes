@@ -1,0 +1,150 @@
+section#contact {
+  max-width: 600px;
+  margin: 0 auto;
+
+  form {
+    height: auto;
+    overflow: hidden;
+
+    label {
+      display: none;
+    }
+
+    div {
+      &.splitLeft {
+        display: inline-block;
+        max-width: 170px;
+        opacity: 0;
+      }
+
+      &.splitRight {
+        display: inline-block;
+        max-width: calc(100% - 180px);
+        width: 100%;
+        margin-left: 10px;
+      }
+    }
+
+    span.rc-time-picker {
+      display: inline-block;
+      max-width: 170px;
+    }
+
+    input[type="submit"] {
+      min-height: 42px;
+      padding: 10px 20px;
+      border: solid 1px silver;
+      background: white;
+      float: right;
+    }
+
+    ::placeholder,
+    select option:first-child {
+      color: #a7a7a7;
+      opacity: 1;
+    }
+
+    textarea {
+      resize: none;
+      min-height: 128px;
+      font-family: inherit;
+      width: 100%;
+      box-sizing: border-box;
+      padding: 10px;
+      margin: 0 0 10px;
+      border-radius: 0;
+      border: solid 1px silver;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    select {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 10px;
+      min-height: 42px;
+      margin: 0 0 10px;
+      border-radius: 0;
+      border: solid 1px silver;
+      background: none;
+
+      &.rc-time-picker-input {
+        font-size: 13.3333px;
+      }
+    }
+  }
+}
+
+.rc-time-picker-panel-inner {
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.rc-time-picker-panel-clear-btn {
+  display: none;
+}
+.rc-time-picker-panel-select {
+  li {
+    max-width: calc(100% - 16px);
+  }
+}
+.rc-time-picker-panel {
+  top: 268px !important;
+}
+@media screen and (max-width:940px) {
+  .rc-time-picker-panel {
+    top: 298px !important;
+  }
+}
+@media screen and (max-width:563px) {
+  .rc-time-picker-panel {
+    top: 269px !important;
+  }
+}
+@media screen and (max-width:442px) {
+  .rc-time-picker-panel {
+    top: 248px !important;
+    left: 5px !important;
+    width: calc(100% - 10px) !important;
+    max-width: 100% !important;
+  }
+
+  .rc-time-picker-panel-combobox {
+    height: auto;
+    overflow: hidden;
+  }
+
+  .rc-time-picker-panel-inner {
+    display: block;
+  }
+
+  .rc-time-picker-panel-select {
+    width: 33.3333%;
+  }
+
+  section#contact {
+    form {
+      label {}
+
+      div {
+        &.splitLeft {
+          float: right;
+          max-width: 100%;
+          width: 100%;
+          min-height: 180px;
+          margin: 0 0 10px;
+        }
+
+        &.splitRight {
+          float: left;
+          margin: 0;
+          max-width: 100%;
+          // display: block;
+        }
+      }
+
+      span.rc-time-picker {}
+    }
+  }
+}

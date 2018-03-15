@@ -1,0 +1,65 @@
+@font-face {
+  font-family: 'Headings';
+  src: url("../fonts/Chalkduster.woff2") format('woff2'), url("../fonts/Chalkduster.woff") format('woff'), url("../fonts/Chalkduster.ttf") format('truetype');
+}
+@font-face {
+  font-family: 'Raleway';
+  src: url("../fonts/Raleway-Regular.woff2") format('woff2'), url("../fonts/Raleway-Regular.woff") format('woff'), url("../fonts/Raleway-Regular.ttf") format('truetype');
+}
+
+html {
+  overflow-y: scroll;
+}
+
+body {
+  font-family: 'Raleway', Fallback, sans-serif;
+  font-weight: 300;
+  margin: 0;
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  section {
+    article {
+      // max-width: 50%;
+      // display: inline-block;
+
+      h1 {
+        font-size: 24px;
+      }
+    }
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: 'Headings', Fallback, sans-serif;
+    font-weight: 100;
+    color: #ec4b85;
+    margin: 10px 0;
+  }
+
+  .wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 5px;
+    position: relative;
+    display: block;
+    // height: auto;
+    // overflow: hidden;
+  }
+}
+@media screen and (max-width:960px) {
+  body {
+    section {
+      article {
+        max-width: 100%;
+      }
+    }
+  }
+}

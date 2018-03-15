@@ -1,0 +1,76 @@
+ul {
+  &.reviews {
+    padding: 0;
+    list-style-type: none;
+    margin: 0;
+
+    li {
+      margin: 0;
+      display: block;
+      margin: 0 auto;
+      max-width: 600px;
+      width: 100%;
+
+      article.customReview {
+        border: solid 1px #dfe0e4;
+        padding: 12px;
+        background: white;
+        margin-bottom: 5px;
+        border-radius: 2px 2px;
+
+        h3 {
+          color: black;
+        }
+      }
+
+      ul {
+        &.stars {
+          z-index: 1;
+          position: absolute;
+          padding: 0;
+          margin: 0;
+          right: 16px;
+          top: 41px;
+          max-width: 120px;
+          width: 100%;
+
+          li {
+            display: inline-block;
+            margin: 0 0 0 5px;
+            width: 20px;
+            height: 20px;
+            overflow: hidden;
+            background-image: url(" data:image/png;base64,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");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: 100%;
+
+            &:first-of-type {
+              margin-left: 0;
+            }
+          }
+        }
+      }
+
+      iframe {
+        // margin: 0 auto;
+        display: block;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+    }
+  }
+}
+@media screen and (max-width: 500px) {
+  // ul {
+  //   &.reviews {
+  //     li {
+  //       iframe {
+  //         height: calc(100% + (100% / 2));
+  //       }
+  //     }
+  //   }
+  // }
+}
