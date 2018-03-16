@@ -63,7 +63,6 @@ class Home extends React.Component {
           </aside>
         </article>
         {/* TODO:(Photographs) */}
-
       </section>
     </div>)
   }
