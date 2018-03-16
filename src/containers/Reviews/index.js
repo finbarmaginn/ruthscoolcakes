@@ -45,9 +45,10 @@ class Reviews extends React.Component {
       }}>
         {
           starsArr.map(function (star, i) {
-            let opacity = star === 1
+            let opacity = star == 1
               ? "1"
               : "0.4"
+
             return <li key={i} style={{
               opacity: opacity
             }}></li>
@@ -83,21 +84,23 @@ class Reviews extends React.Component {
         window.innerWidth > 500
           ? review.height
           : (Number(review.height) + 20)),
-      starsArr = [];
+      starsArr = [0, 0, 0, 0, 0];
 
-    for (var i = 0; i < review.stars; i++) {
-      starsArr.push(i)
-    }
-    // debugger;
+          for (let i = 0; i < review.stars; i++) {
+            starsArr[i] = 1;
+          }
     return (<li key={review.id.toString()} style={{
       height: height + "px",
       position: "relative",
       margin: "20px auto"
     }}>
       <ul className="stars">
-        {
-          starsArr.map(function (star, i) {
-            return <li key={i}></li>
+      {
+        starsArr.map(function (star, i) {
+          let opacity = star == 1
+            ? "1"
+            : "0.4"
+            return <li key={i} style={{opacity:opacity}}></li>
           })
         }</ul>
       <Loader style={{
