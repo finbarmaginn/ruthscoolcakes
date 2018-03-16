@@ -4,6 +4,8 @@ article {
       max-width: calc(100% - 315px);
       margin-right: 5px;
       width: 100%;
+      height: auto;
+      overflow: hidden;
     }
 
     aside {

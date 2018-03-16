@@ -39,11 +39,12 @@ class Home extends React.Component {
         verticalAlign: "middle",
         marginRight: "5px"
       }}/>Ruth’s Cool Cakes</h3>
-            <img src={require('../../imgs/slider/hat.jpg')} style={{
+            <img src={require('../../imgs/gallery/IMG_0984_small.jpg')} style={{
                 float: "right",
                 marginLeft: "5px",
                 marginBottom: "10px",
-                maxWidth: "50%"
+                maxWidth: "50%",
+                maxHeight: "406px"
               }}/>
             <p style={{
                 margin: "10px 0"
