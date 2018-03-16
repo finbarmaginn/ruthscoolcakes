@@ -42,11 +42,11 @@ class Home extends React.Component {
             <img src={require('../../imgs/slider/hat.jpg')} style={{
                 float: "right",
                 marginLeft: "5px",
-                marginBottom: "5px",
+                marginBottom: "10px",
                 maxWidth: "50%"
               }}/>
             <p style={{
-                margin: "5px 0"
+                margin: "10px 0"
               }}>Having always been a lover of baking (and eating!) cakes, I have given up my job as a teacher and decided to share my passion for all things spongey and creamy by setting up a new bespoke cake baking business in Altofts, Wakefield. I make and decorate cakes for any occasion from weddings to baby showers to corporate events. If you are looking for ideas you can browse through the gallery or you can show me your own ideas so that we can come up with something specifically to suit your special occasion.
             </p>
           </section>
