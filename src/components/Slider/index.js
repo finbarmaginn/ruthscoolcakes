@@ -19,7 +19,7 @@ class Slider extends React.Component {
         }}>Loading...</div>
       */
       }
-      <div>
+      <div className="wrapper">
         <div className="owl-carousel owl-theme">
           {
             sliderImages.map((image, i) => {
