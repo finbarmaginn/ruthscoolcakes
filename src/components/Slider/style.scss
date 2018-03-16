@@ -7,7 +7,7 @@
   color: #000;
   border-bottom: 1px solid #fff;
   box-shadow: 0 0 7px rgba(0, 0, 0, 0.3);
-  padding: 10px 5px;
+  padding: 10px 0;
   margin-bottom: 10px;
   z-index: -9;
 
@@ -48,6 +48,8 @@
 @media screen and (max-width: 563px) {
   #slider {
     height: 190px;
+    max-width: 100%;
+    width: 100%;
 
     .owl-item {
       .image {

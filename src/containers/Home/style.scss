@@ -1,13 +1,13 @@
 article {
   &#home {
     section {
-      max-width: calc(100% - 345px);
+      max-width: calc(100% - 315px);
       margin-right: 5px;
       width: 100%;
     }
 
     aside {
-      max-width: 340px;
+      max-width: 310px;
       min-height: 500px;
       width: 100%;
       position: relative;
@@ -17,7 +17,10 @@ article {
       text-align: center;
       font-family: 'Headings', Fallback, sans-serif;
       font-size: 24px;
+      background: #ececec;
       color: black;
+      padding: 10px;
+      margin: 5px 0;
 
       &:after {
         width: 1em;
