@@ -77,7 +77,6 @@ class Contact extends React.Component {
         occasion: occasion,
         message: message
       }
-    debugger;
     this.props.dispatch(submitContact(data)).then((returned) => {
       setTimeout(() => {
         this.props.dispatch(formStatusClear())
@@ -94,12 +93,13 @@ class Contact extends React.Component {
   }
   statusWrap(status) {
     return (<div style={{
-        position: "absolute",
+        position: "fixed",
         top: "0",
         left: "0",
         width: "100%",
         height: "100%",
-        background: "rgba(255, 255, 255, 0.5)"
+        background: "rgba(255, 255, 255, 0.5)",
+        zIndex: "9999"
       }}>{status}</div>)
   }
   renderLoader() {
@@ -112,21 +112,46 @@ class Contact extends React.Component {
       }}/>)
   }
   renderSuccess() {
-    return this.statusWrap(<Success/>)
-  }
-  renderError() {
-    return this.statusWrap((<div><StatusError/>
+    return this.statusWrap((<div><Success/>
       <div style={{
           display: "block",
-          maxWidth: "320px",
           zIndex: "9999",
           textAlign: "center",
           margin: "0 auto",
           background: "white",
           padding: "10px",
-          boxShadow: "0 0 7px rgba(0, 0, 0, 0.3)"
+          boxShadow: "0 0 7px rgba(0, 0, 0, 0.3)",
+          position: "absolute",
+          bottom: "0",
+          width: "100%"
         }}>
-        <h3>Please make sure the form is filled in correctly or else try again later!</h3>
+        <h3 style={{
+            color: "green",
+            maxWidth: "320px",
+            margin: "0 auto"
+          }}>Thanks for getting in touch!<br/>Someone will be in contact with you shortly.</h3>
+
+      </div>
+    </div>))
+  }
+  renderError() {
+    return this.statusWrap((<div><StatusError/>
+      <div style={{
+          display: "block",
+          zIndex: "9999",
+          textAlign: "center",
+          margin: "0 auto",
+          background: "white",
+          padding: "10px",
+          boxShadow: "0 0 7px rgba(0, 0, 0, 0.3)",
+          position: "absolute",
+          bottom: "0",
+          width: "100%"
+        }}>
+        <h3 style={{
+            maxWidth: "320px",
+            margin: "0 auto"
+          }}>Please make sure the form has been correctly filled in or else try again later!</h3>
       </div>
     </div>))
   }
