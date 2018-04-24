@@ -4,9 +4,11 @@ import moment from 'moment'
 import TimePicker from 'rc-time-picker'
 import Loader from '../../components/Loader'
 import Success from '../../components/Success'
+import StatusError from '../../components/StatusError'
 import 'rc-time-picker/assets/index.css';
 import {
   formDataClear,
+  formStatusClear,
   nameChange,
   emailChange,
   telChange,
@@ -78,14 +80,14 @@ class Contact extends React.Component {
     debugger;
     this.props.dispatch(submitContact(data)).then((returned) => {
       setTimeout(() => {
-        // this.props.dispatch(formStatusClear())
+        this.props.dispatch(formStatusClear())
         this.props.dispatch(formDataClear())
       }, 3500)
     }).catch((err) => {
       // debugger;
-      // setTimeout(() => {
-      //   this.props.dispatch(formStatusClear())
-      // }, 3000)
+      setTimeout(() => {
+        this.props.dispatch(formStatusClear())
+      }, 3500)
     });
 
     return false;
@@ -105,15 +107,42 @@ class Contact extends React.Component {
         position: "absolute",
         left: "calc(50% - 20px)",
         top: "calc(50% - 20px)",
-        margin: "0"
+        margin: "0",
+        zIndex: "9999"
       }}/>)
   }
   renderSuccess() {
     return this.statusWrap(<Success/>)
   }
+  renderError() {
+    return this.statusWrap((<div><StatusError/>
+      <div style={{
+          display: "block",
+          maxWidth: "320px",
+          zIndex: "9999",
+          textAlign: "center",
+          margin: "0 auto",
+          background: "white",
+          padding: "10px",
+          boxShadow: "0 0 7px rgba(0, 0, 0, 0.3)"
+        }}>
+        <h3>Please make sure the form is filled in correctly or else try again later!</h3>
+      </div>
+    </div>))
+  }
   render() {
     let now = moment().hour(15).minute(0);
-    let {pending, sent, error} = this.props
+    let {
+      pending,
+      sent,
+      error,
+      name,
+      email,
+      tel,
+      contactTime,
+      occasion,
+      message
+    } = this.props
     return (<section className="wrapper" id="contact">
       <article>
         <h1>Contact</h1>
@@ -128,23 +157,28 @@ class Contact extends React.Component {
               ? this.renderSuccess()
               : ""
           }
+          {
+            error
+              ? this.renderError()
+              : ""
+          }
           <label htmlFor="name">Name</label>
-          <input type="text" id="name" placeholder="Name" required="true" onChange={this.handleNameChange.bind(this)}/>
+          <input value={name} type="text" id="name" placeholder="Name" required="true" onChange={this.handleNameChange.bind(this)}/>
 
           <label htmlFor="email">Email</label>
-          <input type="email" id="email" placeholder="Email" required="true" onChange={this.handleEmailChange.bind(this)}/>
+          <input value={email} type="email" id="email" placeholder="Email" required="true" onChange={this.handleEmailChange.bind(this)}/>
 
           <label htmlFor="phone">Telephone</label>
-          <input type="tel" id="phone" placeholder="Telephone" required="true" onChange={this.handleTelChange.bind(this)}/>
+          <input value={tel} type="tel" id="phone" placeholder="Telephone" required="true" onChange={this.handleTelChange.bind(this)}/>
 
           <div className="splitLeft">
             <label htmlFor="rc-time-picker-input">Best time to contact</label>
-            <TimePicker open={true} format={"hh:mm a"} showSecond={false} use12Hours={true} minuteStep={15} placeholder="Contact Time" onChange={this.handleTimeChange.bind(this)}/>
+            <TimePicker open={true} format={"hh:mm a"} showSecond={false} use12Hours={true} minuteStep={15} placeholder="Contact Time" value={moment(this.props.contactTime || "05:30 pm", "hh:mm a")} onChange={this.handleTimeChange.bind(this)}/>
           </div>
 
           <div className="splitRight">
             <label htmlFor="occasion">Occasion</label>
-            <select id="occasion" defaultValue={"-- Occasion --"} required="true" onChange={this.handleOccChange.bind(this)}>
+            <select value={occasion} id="occasion" required="true" onChange={this.handleOccChange.bind(this)}>
               <option disabled="true">-- Occasion --</option>
               <option>Wedding</option>
               <option>Birthday</option>
@@ -158,7 +192,7 @@ class Contact extends React.Component {
               <option>Other</option>
             </select>
             <label htmlFor="message"/>
-            <textarea id="message" placeholder="Message" onChange={this.handleMessageChange.bind(this)}></textarea>
+            <textarea value={message} id="message" placeholder="Message" onChange={this.handleMessageChange.bind(this)}></textarea>
             <input type="submit" value="Send"></input>
           </div>
 

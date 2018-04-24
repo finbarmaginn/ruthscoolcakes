@@ -28,8 +28,8 @@ export function formDataClear() {
       name: "",
       email: "",
       tel: "",
-      contactTime: "",
-      occasion: "",
+      contactTime: "05:30 pm",
+      occasion: "-- Occasion --",
       message: ""
     }
   }

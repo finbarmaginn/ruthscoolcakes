@@ -1,4 +1,4 @@
-.checkmark {
+.error_checkmark {
   display: block;
   width: 40px;
   height: 40px;
@@ -13,30 +13,30 @@
   z-index: 9999;
 }
 
-.checkmark_circle {
+.error_checkmark_circle {
   position: absolute;
   width: 40px;
   height: 40px;
-  background-color: green;
+  background-color: red;
   border-radius: 20px;
 }
 
-.checkmark_stem {
+.error_checkmark_stem {
   position: absolute;
   width: 3px;
-  height: 24px;
+  height: 30px;
   background-color: #fff;
-  left: 20px;
-  top: 6px;
+  left: 18.5px;
+  top: 5px;
 }
 
-.checkmark_kick {
-  bottom: 8px;
+.error_checkmark_kick {
   position: absolute;
-  width: 10px;
+  width: 30px;
   height: 3px;
   background-color: #fff;
-  left: 13px;
+  left: 5px;
+  top: 18.5px;
 }
 // .spinner {
 //   width: 40px;
