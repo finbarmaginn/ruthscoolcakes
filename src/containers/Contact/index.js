@@ -2,6 +2,8 @@ import React from 'react'
 import {connect} from 'react-redux'
 import moment from 'moment'
 import TimePicker from 'rc-time-picker'
+import Loader from '../../components/Loader'
+import Success from '../../components/Success'
 import 'rc-time-picker/assets/index.css';
 import {
   formDataClear,
@@ -22,7 +24,10 @@ require("./style.scss")
     tel: store.contactData.tel,
     contactTime: store.contactData.contactTime,
     occasion: store.contactData.occasion,
-    message: store.contactData.message
+    message: store.contactData.message,
+    error: store.contactStatus.error,
+    pending: store.contactStatus.pending,
+    sent: store.contactStatus.sent
   }
 })
 
@@ -72,11 +77,10 @@ class Contact extends React.Component {
       }
     debugger;
     this.props.dispatch(submitContact(data)).then((returned) => {
-      // setTimeout(() => {
-      // this.props.dispatch(formStatusClear())
-      // this.props.dispatch(formDataClear())
-      // }, 3000)
-      // debugger;
+      setTimeout(() => {
+        // this.props.dispatch(formStatusClear())
+        this.props.dispatch(formDataClear())
+      }, 3500)
     }).catch((err) => {
       // debugger;
       // setTimeout(() => {
@@ -86,14 +90,44 @@ class Contact extends React.Component {
 
     return false;
   }
+  statusWrap(status) {
+    return (<div style={{
+        position: "absolute",
+        top: "0",
+        left: "0",
+        width: "100%",
+        height: "100%",
+        background: "rgba(255, 255, 255, 0.5)"
+      }}>{status}</div>)
+  }
+  renderLoader() {
+    return this.statusWrap(<Loader style={{
+        position: "absolute",
+        left: "calc(50% - 20px)",
+        top: "calc(50% - 20px)",
+        margin: "0"
+      }}/>)
+  }
+  renderSuccess() {
+    return this.statusWrap(<Success/>)
+  }
   render() {
     let now = moment().hour(15).minute(0);
-
+    let {pending, sent, error} = this.props
     return (<section className="wrapper" id="contact">
       <article>
         <h1>Contact</h1>
         <form onSubmit={this.handleSubmit.bind(this)}>
-
+          {
+            pending
+              ? this.renderLoader()
+              : ""
+          }
+          {
+            sent
+              ? this.renderSuccess()
+              : ""
+          }
           <label htmlFor="name">Name</label>
           <input type="text" id="name" placeholder="Name" required="true" onChange={this.handleNameChange.bind(this)}/>
 
