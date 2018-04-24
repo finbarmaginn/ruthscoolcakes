@@ -1,0 +1,88 @@
+.error_checkmark {
+  display: block;
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: calc(50% - 20px);
+  left: calc(50% - 20px);
+  -ms-transform: rotate(45deg);
+  /* IE 9 */
+  -webkit-transform: rotate(45deg);
+  /* Chrome, Safari, Opera */
+  transform: rotate(45deg);
+  z-index: 9999;
+}
+
+.error_checkmark_circle {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background-color: red;
+  border-radius: 20px;
+}
+
+.error_checkmark_stem {
+  position: absolute;
+  width: 3px;
+  height: 30px;
+  background-color: #fff;
+  left: 18.5px;
+  top: 5px;
+}
+
+.error_checkmark_kick {
+  position: absolute;
+  width: 30px;
+  height: 3px;
+  background-color: #fff;
+  left: 5px;
+  top: 18.5px;
+}
+// .spinner {
+//   width: 40px;
+//   height: 40px;
+//   position: absolute;
+//   margin: 100px auto;
+//   left: calc(50% - 10px);
+// }
+//
+// .double-bounce1,
+// .double-bounce2 {
+//   width: 100%;
+//   height: 100%;
+//   border-radius: 50%;
+//   background-color: silver;
+//   opacity: 0.6;
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   -webkit-animation: sk-bounce 1.0s infinite ease-in-out;
+//   animation: sk-bounce 1.0s infinite ease-in-out;
+// }
+//
+// .double-bounce2 {
+//   -webkit-animation-delay: -0.5s;
+//   animation-delay: -0.5s;
+// }
+// @-webkit-keyframes sk-bounce {
+//   0%,
+//   100% {
+//     -webkit-transform: scale(0.0);
+//   }
+//
+//   50% {
+//     -webkit-transform: scale(1.0);
+//   }
+// }
+// @keyframes sk-bounce {
+//   0%,
+//   100% {
+//     transform: scale(0.0);
+//     -webkit-transform: scale(0.0);
+//   }
+//
+//   50% {
+//     transform: scale(1.0);
+//     -webkit-transform: scale(1.0);
+//   }
+// }

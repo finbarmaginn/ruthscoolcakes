@@ -84,13 +84,16 @@ section#contact {
 .rc-time-picker-panel-clear-btn {
   display: none;
 }
+
 .rc-time-picker-panel-select {
   li {
     max-width: calc(100% - 16px);
   }
 }
+
 .rc-time-picker-panel {
   top: 268px !important;
+  //z-index: -1 !important;
 }
 @media screen and (max-width:940px) {
   .rc-time-picker-panel {

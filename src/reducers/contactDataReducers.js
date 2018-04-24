@@ -2,8 +2,8 @@ const contactData = function reducer(state = {
   name: "",
   email: "",
   tel: "",
-  contactTime: "",
-  occasion: "",
+  contactTime: "05:30 pm",
+  occasion: "-- Occasion --",
   message: ""
 }, action) {
   switch (action.type) {

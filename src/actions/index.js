@@ -25,13 +25,12 @@ export function formDataClear() {
   return {
     type: "FORM_DATA_CLEAR",
     payload: {
-      areaOfInterest: "",
+      name: "",
       email: "",
-      firstName: "",
-      lastName: "",
-      message: "",
-      organisation: "",
-      phoneNumber: ""
+      tel: "",
+      contactTime: "05:30 pm",
+      occasion: "-- Occasion --",
+      message: ""
     }
   }
 }
