@@ -41,7 +41,7 @@ class Home extends React.Component {
         maxHeight: "28px",
         verticalAlign: "middle",
         marginRight: "5px"
-      }}/>Ruth’s Cool Cakes</h3>
+      }}/>Ruth's Cool Cakes</h3>
             <img src={require('../../imgs/gallery/IMG_0984_small.jpg')} style={{
                 float: "right",
                 marginLeft: "5px",
