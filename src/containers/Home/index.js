@@ -10,6 +10,9 @@ require('./style.scss')
 })
 
 class Home extends React.Component {
+  componentDidMount() {
+    document.title = "Ruth's Cool Cakes | Home"
+  }
   render() {
     let {windowWidth, dispatch} = this.props
     return (<div>

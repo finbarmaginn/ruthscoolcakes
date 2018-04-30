@@ -1,6 +1,9 @@
 import React from 'react'
 require("./style.scss")
 class Flavours extends React.Component {
+  componentDidMount() {
+    document.title = "Ruth's Cool Cakes | Flavours"
+  }
   render() {
     return (<section className="wrapper" id="flavours">
       <article>

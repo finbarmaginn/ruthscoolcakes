@@ -34,6 +34,9 @@ require("./style.scss")
 })
 
 class Contact extends React.Component {
+  componentDidMount() {
+    document.title = "Ruth's Cool Cakes | Contact"
+  }
   handleNameChange(e) {
     console.log(e.target.value)
     this.props.dispatch(nameChange(e.target.value))

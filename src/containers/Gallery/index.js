@@ -12,6 +12,9 @@ require('./style.scss')
 })
 
 class Gallery extends React.Component {
+  componentDidMount() {
+    document.title = "Ruth's Cool Cakes | Gallery"
+  }
   render() {
     let {dispatch, src, isActive} = this.props
 
