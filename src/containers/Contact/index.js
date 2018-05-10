@@ -5,7 +5,7 @@ import TimePicker from 'rc-time-picker'
 import Loader from '../../components/Loader'
 import Success from '../../components/Success'
 import StatusError from '../../components/StatusError'
-import 'rc-time-picker/assets/index.css';
+import 'rc-time-picker/assets/index.css'
 import {
   formDataClear,
   formStatusClear,
@@ -38,15 +38,12 @@ class Contact extends React.Component {
     document.title = "Ruth's Cool Cakes | Contact"
   }
   handleNameChange(e) {
-    console.log(e.target.value)
     this.props.dispatch(nameChange(e.target.value))
   }
   handleEmailChange(e) {
-    console.log(e.target.value)
     this.props.dispatch(emailChange(e.target.value))
   }
   handleTelChange(e) {
-    console.log(e.target.value)
     this.props.dispatch(telChange(e.target.value))
   }
   handleTimeChange(e) {
