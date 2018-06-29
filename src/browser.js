@@ -37,10 +37,10 @@ render((<Provider store={store}>
     }}>
     <Route path="/" component={App}>
       <IndexRoute component={Home}></IndexRoute>
-      <Route path="/gallery/" component={Gallery}></Route>
-      <Route path="/flavours/" component={Flavours}></Route>
-      <Route path="/reviews/" component={Reviews}></Route>
-      <Route path="/contact/" component={Contact}></Route>
+      <Route path="/gallery" component={Gallery}></Route>
+      <Route path="/flavours" component={Flavours}></Route>
+      <Route path="/reviews" component={Reviews}></Route>
+      <Route path="/contact" component={Contact}></Route>
       <Route path="*" component={NotFound}></Route>
       {/*
       <Route path="/events" component={Events}></Route>
