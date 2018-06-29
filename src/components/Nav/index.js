@@ -39,16 +39,16 @@ class Nav extends React.Component {
           <Link to="/" onClick={this.toggleNav.bind(this)}>Home</Link>
         </li>
         <li>
-          <Link to="/gallery" onClick={this.toggleNav.bind(this)}>Gallery</Link>
+          <Link to="/gallery/" onClick={this.toggleNav.bind(this)}>Gallery</Link>
         </li>
         <li>
-          <Link to="/flavours" onClick={this.toggleNav.bind(this)}>Suggested Flavours</Link>
+          <Link to="/flavours/" onClick={this.toggleNav.bind(this)}>Suggested Flavours</Link>
         </li>
         <li>
-          <Link to="/reviews" onClick={this.toggleNav.bind(this)}>Reviews</Link>
+          <Link to="/reviews/" onClick={this.toggleNav.bind(this)}>Reviews</Link>
         </li>
         <li>
-          <Link to="/contact" onClick={this.toggleNav.bind(this)}>Contact</Link>
+          <Link to="/contact/" onClick={this.toggleNav.bind(this)}>Contact</Link>
         </li>
       </ul>
     </nav>)
