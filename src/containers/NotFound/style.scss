@@ -1,0 +1,32 @@
+section#notFound {
+  background: black;
+  padding: 50px 0;
+
+  h1,
+  h2 {
+    text-align: center;
+  }
+
+  h1 {
+    font-size: 60px;
+    color: white;
+  }
+
+  h2 {
+    font-size: 40px;
+    color: #ececec;
+  }
+}
+@media screen and (max-width:442px) {
+  section#notFound {
+    padding: 37.5px 0;
+
+    h1 {
+      font-size: 50px;
+    }
+
+    h2 {
+      font-size: 25px;
+    }
+  }
+}

@@ -10,6 +10,7 @@ import Gallery from './containers/Gallery'
 import Flavours from './containers/Flavours'
 import Reviews from './containers/Reviews'
 import Contact from './containers/Contact'
+import NotFound from './containers/NotFound'
 
 // import Download from './containers/Download'
 // import Story from './containers/Story'
@@ -40,7 +41,7 @@ render((<Provider store={store}>
       <Route path="/flavours" component={Flavours}></Route>
       <Route path="/reviews" component={Reviews}></Route>
       <Route path="/contact" component={Contact}></Route>
-
+      <Route path="*" component={NotFound}></Route>
       {/*
       <Route path="/events" component={Events}></Route>
       <Route path="/story" component={Story}></Route>
